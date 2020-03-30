@@ -12,9 +12,9 @@ http: router.route("/").get((req, res) => {
 // add users
 //http://localhost:5000/users/add
 router.route("/add").post((req, res) => {
-  const username = req.body.username;
+  const { name, email, phone } = req.body;
 
-  const newUser = new User({ username });
+  const newUser = new User({ name, email, phone });
 
   newUser
     .save()
